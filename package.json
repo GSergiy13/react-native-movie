@@ -1,21 +1,19 @@
 {
-  "name": "react-native-movie",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.25.0",
-      "onFail": "download"
-    }
-  },
-  "packageManager": "pnpm@11.25.0",
-  "type": "module"
+	"name": "react-native-movie",
+	"private": true,
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"mobile": "pnpm --filter mobile",
+		"web": "pnpm --filter web",
+		"ext": "pnpm --filter ext",
+		"ts-check": "pnpm -r exec tsc --noEmit",
+		"dev": "pnpm -r --parallel dev"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@11.25.0",
+	"type": "module"
 }
