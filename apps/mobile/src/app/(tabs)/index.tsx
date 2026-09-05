@@ -10,7 +10,7 @@ export default function Index() {
 			<Text>
 				{MEDIA_TYPES.map(type => (
 					<Text style={styles.item}>{TYPE_LABELS[type]}, </Text>
-				))}
+				))} 
 			</Text>
 		</View>
 	)
