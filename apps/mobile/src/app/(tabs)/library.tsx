@@ -1,22 +1,36 @@
 import { Link } from 'expo-router'
-import { Text } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { StyleSheet, Text } from 'react-native'
 
 import { MEDIA_TYPES } from '@app/types'
 
+import { TYPE_LABELS } from '@app/constants'
+
+import { colors, fontSize, space } from '@app/tokens'
+
+import { Screen } from '@/components/Screen'
+
 export default function Library() {
 	return (
-		<SafeAreaView>
+		<Screen>
 			<Text>Library</Text>
 
 			{MEDIA_TYPES.map(type => (
 				<Link
 					key={type}
 					href={`/title/${type}/1`}
+					style={style.item}
 				>
-					<Text>{type}</Text>
+					<Text>{TYPE_LABELS[type]}</Text>
 				</Link>
 			))}
-		</SafeAreaView>
+		</Screen>
 	)
 }
+
+const style = StyleSheet.create({
+	item: {
+		color: colors.text.primary,
+		fontSize: fontSize.lg,
+		paddingVertical: space[3]
+	}
+})
